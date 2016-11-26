@@ -50,21 +50,21 @@
 			{
 				if($is_ext != 0)
 				{
-					$requete = 'SELECT name_players as Name, top as total FROM extentions where name_bg like "' . $jeu . '" order by top desc';
+					$requete = 'SELECT name_players as Name, top as total FROM extentions where name_bg like "' . $jeu . '" order by top DESC LIMIT 1';
 					
 				}
 				else
 				{
-					$requete = 'SELECT name_players as Name, total FROM top_score where name_bg like "' . $jeu . '" order by total desc';
+					$requete = 'SELECT name_players as Name, total FROM top_score where name_bg like "' . $jeu . '" order by total DESC LIMIT 1';
 				}
 			}
 			else if($jeu == "")
 			{
-				$requete = 'SELECT name_bg as Name, total FROM players_top where name_players like "' . $joueur . '" order by total desc';
+				$requete = 'SELECT name_bg as Name, total FROM players_top where name_players like "' . $joueur . '" order by total ';
 			}
 			else
 			{
-				$requete = 'SELECT name_bg as Name, total FROM top_score where name_players like "' . $joueur . '" and name_bg like  "' . $jeu . '"  order by total desc';
+				$requete = 'SELECT name_bg as Name, total FROM top_score where name_players like "' . $joueur . '" and name_bg like  "' . $jeu . '"  order by total ';
 			}
 			$reponse = $bdd->query($requete);
 			$array = array();
@@ -93,20 +93,20 @@
 			{
 				if($is_ext != 0)
 				{
-					$requete = 'SELECT  name_players as Name, avg as total FROM extentions where name_bg like "' . $jeu . '" order by avg desc';
+					$requete = 'SELECT  name_players as Name, avg as total FROM extentions where name_bg like "' . $jeu . '" order by avg DESC LIMIT 1';
 				}
 				else
 				{
-					$requete = 'SELECT name_players as Name, total FROM average_score where name_bg like "' . $jeu . '" order by total';
+					$requete = 'SELECT name_players as Name, total FROM average_score where name_bg like "' . $jeu . '" order by total DESC LIMIT 1';
 				}
 			}
 			else if($jeu == "")
 			{
-				$requete = 'SELECT name_bg as Name, total FROM players_average where name_players like "' . $joueur . '" order by total desc';
+				$requete = 'SELECT name_bg as Name, total FROM players_average where name_players like "' . $joueur . '" order by total ';
 			}
 			else
 			{
-				$requete = 'SELECT name_bg as Name, total FROM average_score where name_players like "' . $joueur . '" and name_bg like  "' . $jeu . '"  order by total desc';
+				$requete = 'SELECT name_bg as Name, total FROM average_score where name_players like "' . $joueur . '" and name_bg like  "' . $jeu . '"  order by total ';
 			}
 			$reponse = $bdd->query($requete);
 			$array = array();
@@ -135,20 +135,20 @@
 			{
 				if($is_ext != 0)
 				{
-					$requete = 'SELECT name_players as Name, percent as winning_percentage FROM extentions where name_bg like "' . $jeu . '" order by tot desc';
+					$requete = 'SELECT name_players as Name, percent as winning_percentage FROM extentions where name_bg like "' . $jeu . '" order by percent DESC LIMIT 1';
 				}
 				else
 				{
-					$requete = 'SELECT name_players as Name, winning_percentage FROM victory_percentage where name_bg like "' . $jeu . '" order by winning_percentage desc';
+					$requete = 'SELECT name_players as Name, winning_percentage FROM victory_percentage where name_bg like "' . $jeu . '" order by winning_percentage DESC LIMIT 1';
 				}
 			}
 			else if($jeu == "")
 			{
-				$requete = 'SELECT name_bg as Name, winning_percentage FROM players_percentage where name_players like "' . $joueur . '"   order by winning_percentage desc';
+				$requete = 'SELECT name_bg as Name, winning_percentage FROM players_percentage where name_players like "' . $joueur . '"   order by winning_percentage ';
 			}
 			else
 			{
-				$requete = 'SELECT name_players as Name, winning_percentage FROM victory_percentage where name_players like "' . $joueur . '" and name_bg like  "' . $jeu . '"  order by winning_percentage desc';
+				$requete = 'SELECT name_players as Name, winning_percentage FROM victory_percentage where name_players like "' . $joueur . '" and name_bg like  "' . $jeu . '"  order by winning_percentage ';
 			}
 			$reponse = $bdd->query($requete);
 			$array = array();
@@ -177,20 +177,20 @@
 			{
 				if($is_ext != 0)
 				{
-					$requete = 'SELECT name_players as Name, tot as total  FROM extentions where name_bg like "' . $jeu . '" order by tot desc';
+					$requete = 'SELECT name_players as Name, tot as total  FROM extentions where name_bg like "' . $jeu . '" order by tot DESC LIMIT 1';
 				}
 				else
 				{
-					$requete = 'SELECT name_players as Name, total FROM total_point where name_bg like "' . $jeu . '"  order by total desc';
+					$requete = 'SELECT name_players as Name, total FROM total_point where name_bg like "' . $jeu . '"  order by total DESC LIMIT 1';
 				}
 			}
 			else if($jeu == "")
 			{
-				$requete = 'SELECT name_bg as Name, total FROM players_total where name_players like "' . $joueur . '" order by total desc';
+				$requete = 'SELECT name_bg as Name, total FROM players_total where name_players like "' . $joueur . '" order by total ';
 			}
 			else
 			{
-				$requete = 'SELECT name_bg as Name, total FROM total_point where name_players like "' . $joueur . '" and name_bg like  "' . $jeu . '"  order by total desc';
+				$requete = 'SELECT name_bg as Name, total FROM total_point where name_players like "' . $joueur . '" and name_bg like  "' . $jeu . '"  order by total ';
 			}
 			$reponse = $bdd->query($requete);
 			$array = array();
