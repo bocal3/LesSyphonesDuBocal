@@ -93,8 +93,7 @@
 			{
 				if($is_ext != 0)
 				{
-					$requete = 'SELECT  name_bg as Name, avg as total FROM extentions where name_bg like "' . $jeu . '" order by avg desc limit 1';
-					
+					$requete = 'SELECT  name_players as Name, avg as total FROM extentions where name_bg like "' . $jeu . '" order by avg desc limit 1';
 				}
 				else
 				{
