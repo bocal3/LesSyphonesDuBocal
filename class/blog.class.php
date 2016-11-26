@@ -76,15 +76,7 @@
 		}
 		public function select($limit)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$requete = 'SELECT blog.*, players.name_players from blog, players where players.id_players = blog.fk_player order by id_blog desc limit 10 offset ' . $limit ;
 			$reponse = $bdd->query($requete);
 			$array = array();
@@ -102,16 +94,7 @@
 			return $array;
 		}
 		public function count_()
-		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+		{include("Sgbd.php");
 			$requete = 'SELECT count(*) as nbr_blog from blog';
 			$reponse = $bdd->query($requete);
 			while ($donnees = $reponse->fetch())
@@ -123,15 +106,7 @@
 		}
 		public function insert($blog)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				//On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$bdd->exec('INSERT INTO blog(fk_player, title_blog, content_blog,flash_blog, date_blog) VALUES(' . $blog->name() . ',\'' . $blog->title() .'\', \''. $blog->content() .'\', \'' . $blog->flash() . '\',\'' . $blog->date_() . '\')');
 		}
 	}

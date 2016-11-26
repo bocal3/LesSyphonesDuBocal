@@ -55,15 +55,7 @@
 		}
 		public function selectnames_activ()
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$requete = 'select players.name_players as Name from players where is_activ = 1 ORDER BY players.name_players';
 			$reponse = $bdd->query($requete);
 			$array = array();
@@ -78,15 +70,7 @@
 		}
 		public function count_($joueur)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$requete = 'SELECT number FROM game_plays_player where name_players like "' . $joueur .'"';
 			$reponse = $bdd->query($requete);
 			$count_game = 0;
@@ -99,15 +83,7 @@
 		}
 		public function select_id($joueur)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$id = 0;
 			$requete = 'SELECT id_players FROM players where name_players like "' . $joueur .'"';
 			$reponse = $bdd->query($requete);
@@ -120,15 +96,7 @@
 		}
 		public function select_pass($joueur)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$pass = "";
 			$requete = 'SELECT password_players FROM players where name_players like "' . $joueur->name() .'" and is_activ = 1';
 			$reponse = $bdd->query($requete);
@@ -141,15 +109,7 @@
 		}
 		public function inscription($player)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				//On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$bdd->exec('INSERT INTO `players`(`name_players`, `password_players`) VALUES (\'' . $player->name() . '\',\'' . $player->password() . '\')');
 		}
 	}

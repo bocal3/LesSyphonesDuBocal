@@ -37,15 +37,7 @@
 		}
 		public function select_top($jeu,$joueur,$is_ext)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			if($joueur == "")
 			{
 				if($is_ext != 0)
@@ -80,15 +72,7 @@
 		}
 		public function select_avg($jeu,$joueur,$is_ext)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			if($joueur == "")
 			{
 				if($is_ext != 0)
@@ -122,15 +106,7 @@
 		}
 		public function select_percent($jeu,$joueur,$is_ext)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			if($joueur == "")
 			{
 				if($is_ext != 0)
@@ -164,15 +140,7 @@
 		}
 		public function select_tot($jeu,$joueur,$is_ext)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			if($joueur == "")
 			{
 				if($is_ext != 0)

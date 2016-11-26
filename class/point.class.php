@@ -75,28 +75,12 @@
 		}
 		public function insert($point)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				//On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$bdd->exec('INSERT INTO `points`(`fk_players`, `fk_board_games`, `fk_game_plays`, `player_points`, `won`) VALUES (' . $point->player() . ',' . $point->bg() .',' . $point->gameplay() . ',' . $point->player_point() . ',0)');
 		}
 		public function update($id_gp, $valeur)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				//On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$bdd->exec('UPDATE `points` SET `won`= 1 WHERE points.fk_game_plays = ' . $id_gp . ' and points.player_points = ' . $valeur);
 		}
 	}

@@ -45,15 +45,7 @@
 		}
 		public function insert($gameplay)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				//On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$bdd->exec('INSERT INTO game_plays(date_gp, location_gp) VALUES(\'' . date("Y-m-d") . '\',\'' . addslashes($gameplay->location()) .'\')');
 			$last = $bdd->query('SELECT max(id_gp) as max FROM game_plays ');
 			while ($donnees = $last->fetch())
@@ -65,15 +57,7 @@
 		}
 		public function boardgame_gameplay($id_bg, $id_gp)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				//On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$bdd->exec('INSERT INTO extension(fk_game_play, fk_board_game) VALUES(' . $id_gp . ',' . $id_bg .')');
 		}
 	}

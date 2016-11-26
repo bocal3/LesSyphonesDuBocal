@@ -114,15 +114,7 @@
 		}
 		public function selectnames_base_activ()
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$requete = 'SELECT name_bg as Name FROM board_games where  is_activ = 1 and is_extention = 0 order by name_bg';
 			$reponse = $bdd->query($requete);
 			$array = array();
@@ -137,15 +129,7 @@
 		}
 		public function selectnames_ext_activ()
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$requete = 'select board_games.name_bg as Name from board_games where is_extention = 1  and is_activ = 1 ORDER BY board_games.name_bg';
 			$reponse = $bdd->query($requete);
 			$array = array();
@@ -160,15 +144,7 @@
 		}
 		public function selectnames_search_activ($duree,$nbr,$age)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$requete = 'select name_bg as Name from board_games where  is_activ = 1 and is_extention = 0 and';
 			if($duree != 1)
 			{
@@ -209,15 +185,7 @@
 		}
 		public function est_extention($jeu)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$requete = 'select extension.fk_game_play from extension, game_plays, board_games where extension.fk_game_play = game_plays.id_gp and board_games.id_bg = extension.fk_board_game and board_games.name_bg like "' . $jeu . '" and is_activ = 1';
 			$reponse = $bdd->query($requete);
 			$isext=0;
@@ -237,15 +205,7 @@
 		}
 		public function count_ext($jeu)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$requete = 'select count(0) AS `number` from game_plays, points, board_games, extension where game_plays.id_gp = points.fk_game_plays and board_games.id_bg = extension.fk_board_game and points.won = 1 and extension.fk_game_play = game_plays.id_gp and name_bg like "' . $jeu .'" group by points.fk_board_games order by number desc';
 			$reponse = $bdd->query($requete);
 			$count_game = 0;
@@ -258,15 +218,7 @@
 		}
 		public function count_($jeu,$joueur,$is_ext)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			if($joueur == "")
 			{
 				if($is_ext != 0)
@@ -293,15 +245,7 @@
 		}
 		public function select_jeu($jeu)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$requete = 'SELECT * FROM board_games where name_bg like "'. $jeu. '" order by name_bg';
 			$reponse = $bdd->query($requete);
 			$array = array();
@@ -319,15 +263,7 @@
 		}
 		public function select_id($jeu)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$id = 0;
 			$requete = 'SELECT id_bg FROM board_games where name_bg like "' . $jeu .'"';
 			$reponse = $bdd->query($requete);
@@ -340,15 +276,7 @@
 		}
 		public function insert($boardgame)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				//On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$bdd->exec('INSERT INTO board_games(name_bg, duration_bg, min_players_bg,max_players_bg, age_bg, ihave, is_extention) VALUES(\'' . $boardgame->name() . '\',' . $boardgame->duration() .', '. $boardgame->min_players() .', ' . $boardgame->max_players() . ',' . $boardgame->age() . ',1, ' . $boardgame->extention() . ')');
 		}
 	}

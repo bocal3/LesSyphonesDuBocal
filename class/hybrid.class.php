@@ -37,15 +37,7 @@
 		}
 		public function search($caract)
 		{
-			try
-			{
-				$bdd = new PDO('mysql:host=localhost;dbname=juegos;charset=utf8', 'root', '');
-				// On se connecte à la base de données avec les bosn identifiants.
-			}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
+			include("Sgbd.php");
 			$requete = 'select players.name_players as Name, \'joueur\' as Type from players where players.name_players LIKE \'%' . $caract .'%\'' . ' and players.is_activ = 1 UNION SELECT board_games.name_bg as Name , \'jeu\' as Type   from board_games where board_games.name_bg LIKE \'%' . $caract .'%\'  and board_games.is_activ = 1 and is_extention = 0';
 			$reponse = $bdd->query($requete);
 			$array = array();
