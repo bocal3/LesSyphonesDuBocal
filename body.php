@@ -193,6 +193,38 @@
 					header('Location: index.php');
 				}
 			}
+			else if($page=="d4")
+			{
+				if(file_exists('sections\outils\naheulbeukjdr\d4.php'))
+				{
+					require 'class\d.class.php';
+					include('sections\outils\naheulbeukjdr\d4.php');
+				}
+			}
+			else if($page=="d6")
+			{
+				if(file_exists('sections\outils\naheulbeukjdr\d6.php'))
+				{
+					require 'class\d.class.php';
+					include('sections\outils\naheulbeukjdr\d6.php');
+				}
+			}
+			else if($page=="d20")
+			{
+				if(file_exists('sections\outils\naheulbeukjdr\d20.php'))
+				{
+					require 'class\d.class.php';
+					include('sections\outils\naheulbeukjdr\d20.php');
+				}
+			}
+			else if($page=="d100")
+			{
+				if(file_exists('sections\outils\naheulbeukjdr\d100.php'))
+				{
+					require 'class\d.class.php';
+					include('sections\outils\naheulbeukjdr\d100.php');
+				}
+			}
 		}
 		else
 		{//Si nous n'avons pas de paramètre page.
