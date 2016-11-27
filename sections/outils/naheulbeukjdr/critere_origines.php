@@ -6,23 +6,23 @@
 	}
 	if($perso->cou() >= 11 and $perso->fo() >= 12)
 	{
-		echo ' un nain';
+		echo ' un <a href="index.php?page=nain&cou=' . $perso->cou() . '&ad=' . $perso->ad() . '&int=' . $perso->int_() . '&fo=' . $perso->fo() . '&cha=' . $perso->cha() . '&destin=' . $perso->destin() . '&att=' . $perso->att() . '&prd=' . $perso->prd(). '&po=' . $perso->po() .'">nain</a>';
 	}
 	if($perso->int_() >= 11 and $perso->cha() >= 12 and $perso->ad() >= 12 and $perso->fo() <= 12)
 	{
-		echo ' un haut elfe';
+		echo ' un <a href="index.php?page=helfe&cou=' . $perso->cou() . '&ad=' . $perso->ad() . '&int=' . $perso->int_() . '&fo=' . $perso->fo() . '&cha=' . $perso->cha() . '&destin=' . $perso->destin() . '&att=' . $perso->att() . '&prd=' . $perso->prd(). '&po=' . $perso->po() .'">haut elfe</a>';
 	}
 	if($perso->cha() >= 10 and $perso->ad() >= 11)
 	{
-		echo ' un demi elfe';
+		echo ' un <a href="index.php?page=delfe&cou=' . $perso->cou() . '&ad=' . $perso->ad() . '&int=' . $perso->int_() . '&fo=' . $perso->fo() . '&cha=' . $perso->cha() . '&destin=' . $perso->destin() . '&att=' . $perso->att() . '&prd=' . $perso->prd(). '&po=' . $perso->po() .'">demi elfe</a>';
 	}
 	if($perso->cha() >= 12 and $perso->ad() >= 10 and $perso->fo() <= 11)
 	{
-		echo ' un elfe sylvain';
+		echo ' un <a href="index.php?page=elfes&cou=' . $perso->cou() . '&ad=' . $perso->ad() . '&int=' . $perso->int_() . '&fo=' . $perso->fo() . '&cha=' . $perso->cha() . '&destin=' . $perso->destin() . '&att=' . $perso->att() . '&prd=' . $perso->prd(). '&po=' . $perso->po() .'">elfe sylvain</a>';
 	}
 	if($perso->int_() >= 12 and $perso->ad() >= 13)
 	{
-		echo ' un elfe noir';
+		echo ' un <a href="index.php?page=elfen&cou=' . $perso->cou() . '&ad=' . $perso->ad() . '&int=' . $perso->int_() . '&fo=' . $perso->fo() . '&cha=' . $perso->cha() . '&destin=' . $perso->destin() . '&att=' . $perso->att() . '&prd=' . $perso->prd(). '&po=' . $perso->po() .'">elfe noir</a>';
 	}
 	if($perso->int_() <= 8 and $perso->cha() <= 10 and $perso->fo() <= 12)
 	{

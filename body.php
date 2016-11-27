@@ -250,7 +250,7 @@
 					include('sections\outils\naheulbeukjdr\new_perso.php');
 				}
 			}
-			else if($page=="humain" OR $page=="barbare")
+			else if($page=="humain" OR $page=="barbare" OR $page=="nain" OR $page=="helfe" OR $page=="delfe" OR $page=="elfes" OR $page=="elfen")
 			{
 				require 'class\outils\perso.class.php';
 				$perso = new Perso();

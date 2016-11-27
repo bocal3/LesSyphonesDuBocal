@@ -1,5 +1,5 @@
 <?php
-	class Orque extends Perso
+	class ElfeNoir extends Perso
 	{
 		//n'utilise pas les armes à deux mains
 		//transport de charge limité 15kg
@@ -7,7 +7,7 @@
 		//n'utilise pas de bouclier
 		public function __construct()
 		{
-			$this->SetPV(35);
+			$this->SetPV(25);
 		}
 		public function __toString()
 		{

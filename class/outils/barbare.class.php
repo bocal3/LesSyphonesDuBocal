@@ -8,8 +8,6 @@
 		public function __construct()
 		{
 			$this->SetPV(35);
-			// +1 ATT
-			// -1 PRD
 		}
 		public function __toString()
 		{

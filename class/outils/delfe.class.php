@@ -1,13 +1,12 @@
 <?php
-	class Orque extends Perso
+	class DemiElfe extends Perso
 	{
 		//n'utilise pas les armes à deux mains
 		//transport de charge limité 15kg
-		//n'utilise pas d'armue sup PR3 (sauf magique)
-		//n'utilise pas de bouclier
+		//n'utilise pas d'armue sup PR5 (sauf magique)
 		public function __construct()
 		{
-			$this->SetPV(35);
+			$this->SetPV(28);
 		}
 		public function __toString()
 		{
