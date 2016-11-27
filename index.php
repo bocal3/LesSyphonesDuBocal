@@ -6,7 +6,7 @@
     	echo '<head>';
         	echo '<meta charset="utf-8" />';
         	echo '<link rel="stylesheet" href="style.css" />';
-        	echo '<title>Les syphonés du bocal - Jouons à la maison</title>';
+        	echo '<title>' . $titresimple . ' - ' . $soustitre . '</title>';
     	echo '</head>';
     	echo '<body>';
         	echo '<div id="bloc_page">';

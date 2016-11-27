@@ -7,6 +7,7 @@
 	$password = 'Password';
 	$inscription = 'Inscription';
 	$titre = 'Les syphon<strong>é</strong>s <br /> du bocal';
+	$titresimple = 'Les syphonés du bocal';
 	$soustitre = 'Jouons à la maison !';
 	$accueil = 'Accueil';
 	$outil = 'Outils';
