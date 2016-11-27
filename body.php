@@ -368,7 +368,7 @@
 				}
 				else
 				{
-						echo '<p>Erreur de mot de passe !</p>';
+						echo '<p>' . $password_erreur . '</p>';
 				}
 			}
 			else if(isset($_POST['COU']) && !empty(htmlspecialchars($_POST['COU'])) && isset($_POST['AD']) && !empty($_POST['AD']) && isset($_POST['INT']) && !empty($_POST['INT']) && isset($_POST['FO']) && !empty($_POST['FO']) && isset($_POST['CHA']) && !empty($_POST['CHA']) && isset($_POST['DEST']) && !empty($_POST['DEST']) && isset($_POST['PO']) && !empty($_POST['PO']))

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 	session_start();
+	include("contenu.php");
 	echo '<html>';
     	echo '<head>';
         	echo '<meta charset="utf-8" />';
