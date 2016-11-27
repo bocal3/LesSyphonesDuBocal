@@ -26,101 +26,35 @@
 	}
 	if($perso->int_() <= 8 and $perso->cha() <= 10 and $perso->fo() <= 12)
 	{
-		echo ' un orque';
+		echo ' un <a href="index.php?page=orque&cou=' . $perso->cou() . '&ad=' . $perso->ad() . '&int=' . $perso->int_() . '&fo=' . $perso->fo() . '&cha=' . $perso->cha() . '&destin=' . $perso->destin() . '&att=' . $perso->att() . '&prd=' . $perso->prd(). '&po=' . $perso->po() .'">orque</a>';
 	}
 	if($perso->int_() <= 10 and $perso->ad() <= 11 and $perso->fo() >= 12)
 	{
-		echo ' un demi orque';
+		echo ' un <a href="index.php?page=dorque&cou=' . $perso->cou() . '&ad=' . $perso->ad() . '&int=' . $perso->int_() . '&fo=' . $perso->fo() . '&cha=' . $perso->cha() . '&destin=' . $perso->destin() . '&att=' . $perso->att() . '&prd=' . $perso->prd(). '&po=' . $perso->po() .'">demi orque</a>';
 	}
 	if($perso->cou() <= 10 and $perso->int_() <= 10 and $perso->cha() <= 8 and $perso->fo() <= 9)
 	{
-		echo ' un gobelin';
+		echo ' un <a href="index.php?page=gobelin&cou=' . $perso->cou() . '&ad=' . $perso->ad() . '&int=' . $perso->int_() . '&fo=' . $perso->fo() . '&cha=' . $perso->cha() . '&destin=' . $perso->destin() . '&att=' . $perso->att() . '&prd=' . $perso->prd(). '&po=' . $perso->po() .'">gobelin</a>';
 	}
 	if($perso->int_() <= 9 and $perso->cha() <= 10 and $perso->ad() <= 11 and $perso->fo() >= 13)
 	{
-		echo ' un ogre';
+		echo ' un <a href="index.php?page=ogre&cou=' . $perso->cou() . '&ad=' . $perso->ad() . '&int=' . $perso->int_() . '&fo=' . $perso->fo() . '&cha=' . $perso->cha() . '&destin=' . $perso->destin() . '&att=' . $perso->att() . '&prd=' . $perso->prd(). '&po=' . $perso->po() .'">ogre</a>';
 	}
 	if($perso->cou() >= 12 and $perso->int_() >= 10 and $perso->fo() <= 10)
 	{
-		echo ' un hobbit';
+		echo ' un <a href="index.php?page=hobbit&cou=' . $perso->cou() . '&ad=' . $perso->ad() . '&int=' . $perso->int_() . '&fo=' . $perso->fo() . '&cha=' . $perso->cha() . '&destin=' . $perso->destin() . '&att=' . $perso->att() . '&prd=' . $perso->prd(). '&po=' . $perso->po() .'">hobbit</a>';
 	}
 	if($perso->int_() >= 10 and $perso->ad() >= 13 and $perso->fo() <= 18)
 	{
-		echo ' un gnome';
+		echo ' un <a href="index.php?page=gnome&cou=' . $perso->cou() . '&ad=' . $perso->ad() . '&int=' . $perso->int_() . '&fo=' . $perso->fo() . '&cha=' . $perso->cha() . '&destin=' . $perso->destin() . '&att=' . $perso->att() . '&prd=' . $perso->prd(). '&po=' . $perso->po() .'">gnome</a>';
 	}
 	if($perso->cou() >= 10 and $perso->int_() >= 11 and $perso->ad() >= 12 and $perso->fo() >= 11)
 	{
-		echo ' un nain de la mafia';
+		echo ' un <a href="index.php?page=nainm&cou=' . $perso->cou() . '&ad=' . $perso->ad() . '&int=' . $perso->int_() . '&fo=' . $perso->fo() . '&cha=' . $perso->cha() . '&destin=' . $perso->destin() . '&att=' . $perso->att() . '&prd=' . $perso->prd(). '&po=' . $perso->po() .'">nain de la mafia</a>';
 	}
 	if($perso->cou() >= 12 and $perso->cha() >= 12 and $perso->ad() >= 11 and $perso->fo() >= 12)
 	{
-		echo ' une amazone sylderienne';
+		echo ' un <a href="index.php?page=amazones&cou=' . $perso->cou() . '&ad=' . $perso->ad() . '&int=' . $perso->int_() . '&fo=' . $perso->fo() . '&cha=' . $perso->cha() . '&destin=' . $perso->destin() . '&att=' . $perso->att() . '&prd=' . $perso->prd(). '&po=' . $perso->po() .'">amazone sylderienne</a>';
 	}
 	echo '</p>';
-	// echo '<p>Vous pouvez avoir comme metier : ';
-	// if($perso->cou() >= 12 and $perso->fo() >= 12)
-	// {
-		// echo 'guerrier ';
-	// }
-	// if($perso->ad() >= 13)
-	// {
-		// echo 'assassin ';
-	// }
-	// if($perso->ad() >= 12)
-	// {
-		// echo 'voleur ';
-	// }
-	// if($perso->cha() >= 12)
-	// {
-		// echo 'prêtre ';
-	// }
-	// if($perso->int_() >= 12)
-	// {
-		// echo 'mage ';
-	// }
-	// if($perso->cou() >= 12 and $perso->int_() >= 10 and $perso->cha() >= 11 and $perso->fo() <= 9)
-	// {
-		// echo 'paladin ';
-	// }
-	// if($perso->cha() >= 10 and $perso->ad() >= 10)
-	// {
-		// echo 'ranger ';
-	// }
-	// if($perso->cha() >= 12 and $perso->ad() >= 11)
-	// {
-		// echo 'menestrel ';
-	// }
-	// if($perso->int_() >= 12 and $perso->cha() >= 11)
-	// {
-		// echo 'marchand ';
-	// }
-	// if($perso->ad() >= 11)
-	// {
-		// echo 'ingenieur ';
-	// }
-	// if($perso->cou() >= 11 and $perso->ad() >= 11)
-	// {
-		// echo 'pirate ';
-	// }
-	// if($perso->int_() >= 10 and $perso->cha() >= 12)
-	// {
-		// echo 'noble ';
-	// }
-	// if($perso->cou() >= 11 and $perso->cha() >= 12 and $perso->fo() >= 12)
-	// {
-		// echo 'officier ';
-	// }
-	// if($perso->ad() >= 12)
-	// {
-		// echo 'éclaireur ';
-	// }
-	// if($perso->cou() >= 11 and $perso->fo() >= 12)
-	// {
-		// echo 'soldat lourd ';
-	// }
-	// if($perso->int_() >= 12 and $perso->ad() >= 12)
-	// {
-		// echo 'medecin armurier ';
-	// }
-	// echo '</p>';
 ?>

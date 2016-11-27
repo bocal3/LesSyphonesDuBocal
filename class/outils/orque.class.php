@@ -1,10 +1,8 @@
 <?php
 	class Orque extends Perso
 	{
-		//n'utilise pas les armes à deux mains
-		//transport de charge limité 15kg
-		//n'utilise pas d'armue sup PR3 (sauf magique)
-		//n'utilise pas de bouclier
+		//N'utilise aucune forme de magie
+		//N'utilise pas d'arbalète ou d'arme complexe
 		public function __construct()
 		{
 			$this->SetPV(35);
