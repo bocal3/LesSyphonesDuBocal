@@ -1,0 +1,21 @@
+<?php
+	$type=$_GET['type'];
+	if(isset($_GET['page']))
+	{
+		$page=$_GET['page'];
+		if($type=="jeu")
+		{
+			if(file_exists("simplification\get_type_jeu.php"))
+			{
+				include("simplification\get_type_jeu.php");
+			}
+		}
+		else if($type=="joueur" AND isset($_SESSION['login']) && !empty(htmlspecialchars($_SESSION['login'])))
+		{
+			if(file_exists("simplification\get_type_joueur.php"))
+			{
+				include("simplification\get_type_joueur.php");
+			}
+		}
+	}				
+?>

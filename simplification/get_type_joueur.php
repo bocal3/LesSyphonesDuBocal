@@ -1,0 +1,10 @@
+<?php
+	if(file_exists("sections\players\players.php"))
+	{
+		include("sections\players\players.php");
+	}
+	if(file_exists("sections\players\pl.php"))
+	{
+		include("sections\players\pl.php");
+	}				
+?>
