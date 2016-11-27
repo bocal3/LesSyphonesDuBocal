@@ -10,9 +10,10 @@
 		echo '<nav>';
 			echo '<ul>';
 				echo '<li><a href="index.php?page=accueil">Accueil</a></li>';
-				echo '<li><a href="index.php?page=bg">Mes jeux</a></li>';
+				echo '<li><a href="index.php?page=bg">Jeux</a></li>';
 				if(isset($_SESSION['login']) && !empty(htmlspecialchars($_SESSION['login'])))
 				{
+					echo '<li><a href="index.php?page=out">Outils</a></li>';
 					echo '<li><a href="index.php?page=st">Start</a></li>';
 					if($_SESSION['login'] == 'bocal')
 					{

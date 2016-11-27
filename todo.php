@@ -13,5 +13,9 @@
 					
 					<p>filtrer les extension en fonction du jeu de base choisi</p>
 					
+					<p>JDR : Caractéristique sup12 ou inf8</p>
+					
+					<p>JDR : intégration des compétences</p>
+					
 				';
 ?>	

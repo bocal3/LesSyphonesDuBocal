@@ -1,0 +1,34 @@
+<?php
+	echo '<section>';
+		echo '<article>';
+			echo '<form method="post" action="index.php">';
+			echo '<p>';
+				echo '<label for="COU">Courage</label><input type="text" name="COU" id="COU" placeholder="Valeur d\'un D6+7" />';
+			echo '</p>';
+			echo '<p>';
+				echo '<label for="AD">Adresse</label><input type="text" name="AD" id="AD" placeholder="Valeur d\'un D6+7" />';
+			echo '</p>';
+			echo '<p>';
+				echo '<label for="INT">Intelligence</label><input type="text" name="INT" id="INT" placeholder="Valeur d\'un D6+7" />';
+			echo '</p>';
+			echo '<p>';
+				echo '<label for="FO">Force</label><input type="text" name="FO" id="FO" placeholder="Valeur d\'un D6+7" />';
+			echo '</p>';
+			echo '<p>';
+				echo '<label for="CHA">Charisme</label><input type="text" name="CHA" id="CHA" placeholder="Valeur d\'un D6+7" />';
+			echo '</p>';
+			echo '<p>';
+				echo '<label for="DEST">Point de destin</label><input type="text" name="DEST" id="DEST" placeholder="Valeur d\'un D4-1" />';
+			echo '</p>';
+			echo '<p>';
+				echo '<label for="PO">Fortune</label><input type="text" name="PO" id="PO" placeholder="Valeur de 2D6*10" />';
+			echo '</p>';
+			echo '</p>';
+				echo '<br /><input type="checkbox" name="outilsD" />Voulez vous utiliser l\'outils dé ?';
+			echo '</p>';	
+			echo '<p>';
+				echo '<input type="submit" value="Valider" />';
+			echo '</form>';
+		echo '</article>';
+	echo '</section>';
+?>

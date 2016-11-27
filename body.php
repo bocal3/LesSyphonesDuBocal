@@ -193,11 +193,18 @@
 					header('Location: index.php');
 				}
 			}
+			else if($page=="out")
+			{
+				if(file_exists('sections\outils\outils.php'))
+				{
+					include('sections\outils\outils.php');
+				}
+			}
 			else if($page=="d4")
 			{
 				if(file_exists('sections\outils\naheulbeukjdr\d4.php'))
 				{
-					require 'class\d.class.php';
+					require 'class\outils\d.class.php';
 					include('sections\outils\naheulbeukjdr\d4.php');
 				}
 			}
@@ -205,7 +212,7 @@
 			{
 				if(file_exists('sections\outils\naheulbeukjdr\d6.php'))
 				{
-					require 'class\d.class.php';
+					require 'class\outils\d.class.php';
 					include('sections\outils\naheulbeukjdr\d6.php');
 				}
 			}
@@ -213,7 +220,7 @@
 			{
 				if(file_exists('sections\outils\naheulbeukjdr\d20.php'))
 				{
-					require 'class\d.class.php';
+					require 'class\outils\d.class.php';
 					include('sections\outils\naheulbeukjdr\d20.php');
 				}
 			}
@@ -221,8 +228,45 @@
 			{
 				if(file_exists('sections\outils\naheulbeukjdr\d100.php'))
 				{
-					require 'class\d.class.php';
+					require 'class\outils\d.class.php';
 					include('sections\outils\naheulbeukjdr\d100.php');
+				}
+			}
+			else if($page=="com")
+			{
+				if(file_exists('sections\outils\naheulbeukjdr\critere_origines.php'))
+				{
+					require 'class\outils\d.class.php';
+					require 'class\outils\perso.class.php';
+					include('sections\outils\naheulbeukjdr\critere_origines.php');
+				}
+			}
+			else if($page=="newperso")
+			{
+				if(file_exists('sections\outils\naheulbeukjdr\new_perso.php'))
+				{
+					require 'class\outils\d.class.php';
+					require 'class\outils\perso.class.php';
+					include('sections\outils\naheulbeukjdr\new_perso.php');
+				}
+			}
+			else if($page=="humain" OR $page=="barbare")
+			{
+				require 'class\outils\perso.class.php';
+				$perso = new Perso();
+				$perso->SetCOU($_GET['cou']);
+				$perso->SetAD($_GET['ad']);
+				$perso->SetINT($_GET['int']);
+				$perso->SetFO($_GET['fo']);
+				$perso->SetCHA($_GET['cha']);
+				$perso->SetDestin($_GET['destin']);
+				$perso->SetPO($_GET['po']);
+				$perso->SetATT($_GET['att']);
+				$perso->SetPRD($_GET['prd']);
+				if(file_exists('sections\outils\naheulbeukjdr\\' . $page. '.php'))
+				{
+					require 'class\outils\\' . $page. '.class.php';
+					include('sections\outils\naheulbeukjdr\\' . $page. '.php');
 				}
 			}
 		}
@@ -325,6 +369,43 @@
 				else
 				{
 						echo '<p>Erreur de mot de passe !</p>';
+				}
+			}
+			else if(isset($_POST['COU']) && !empty(htmlspecialchars($_POST['COU'])) && isset($_POST['AD']) && !empty($_POST['AD']) && isset($_POST['INT']) && !empty($_POST['INT']) && isset($_POST['FO']) && !empty($_POST['FO']) && isset($_POST['CHA']) && !empty($_POST['CHA']) && isset($_POST['DEST']) && !empty($_POST['DEST']) && isset($_POST['PO']) && !empty($_POST['PO']))
+			{
+				require 'class\outils\perso.class.php';
+				$perso = new Perso();
+				$perso->SetCOU($_POST['COU']);
+				$perso->SetAD($_POST['AD']);
+				$perso->SetINT($_POST['INT']);
+				$perso->SetFO($_POST['FO']);
+				$perso->SetCHA($_POST['CHA']);
+				$perso->SetPO($_POST['PO']);
+				$perso->SetDestin($_POST['DEST']);
+				echo $perso->couadintfocha();
+				if(file_exists('sections\outils\naheulbeukjdr\critere_origines.php'))
+				{
+					include('sections\outils\naheulbeukjdr\critere_origines.php');
+				}
+			}
+			else if(isset($_POST['outilsD']) && !empty(htmlspecialchars($_POST['outilsD'])))
+			{
+				require 'class\outils\perso.class.php';
+				require 'class\outils\d.class.php';
+				$perso = new Perso();
+				$d = new D(6);
+				$perso->SetCOU($d->roll()+7);
+				$perso->SetAD($d->roll()+7);
+				$perso->SetINT($d->roll()+7);
+				$perso->SetFO($d->roll()+7);
+				$perso->SetCHA($d->roll()+7);
+				$perso->SetPO(($d->roll()+$d->roll())*10);
+				$d = new D(4);
+				$perso->SetDestin($d->roll()-1);
+				echo $perso->couadintfocha();
+				if(file_exists('sections\outils\naheulbeukjdr\critere_origines.php'))
+				{
+					include('sections\outils\naheulbeukjdr\critere_origines.php');
 				}
 			}
 			else
